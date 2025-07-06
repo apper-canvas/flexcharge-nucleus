@@ -64,12 +64,12 @@ const Settings = () => {
         title="Settings"
         subtitle="Configure your billing platform"
         action={
-          <Button
+<Button
             variant="primary"
             icon="Play"
             onClick={() => navigate('/onboarding')}
           >
-            Start Onboarding
+            Get Started with Setup
           </Button>
         }
       />
