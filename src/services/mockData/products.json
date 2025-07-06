@@ -1,0 +1,57 @@
+[
+  {
+    "Id": 1,
+    "name": "Premium Template Pack",
+    "sku": "PTP-001",
+    "description": "Professional website templates for modern businesses",
+    "price": 49.99,
+    "modelType": "one-time",
+    "status": "active",
+    "category": "Templates",
+    "createdAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "AI Image Generator",
+    "sku": "AIG-002",
+    "description": "High-quality AI-generated images for your projects",
+    "price": 0.05,
+    "modelType": "credit",
+    "status": "active",
+    "category": "AI Tools",
+    "createdAt": "2024-01-20T14:15:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "API Access Pro",
+    "sku": "API-003",
+    "description": "Professional API access with advanced features",
+    "price": 0.01,
+    "modelType": "usage",
+    "status": "active",
+    "category": "API Services",
+    "createdAt": "2024-01-25T09:45:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "Design Course Bundle",
+    "sku": "DCB-004",
+    "description": "Complete design course with video tutorials",
+    "price": 199.99,
+    "modelType": "one-time",
+    "status": "draft",
+    "category": "Education",
+    "createdAt": "2024-02-01T16:20:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "Logo Design Service",
+    "sku": "LDS-005",
+    "description": "Professional logo design with revisions",
+    "price": 299.99,
+    "modelType": "milestone",
+    "status": "active",
+    "category": "Design Services",
+    "createdAt": "2024-02-05T11:30:00Z"
+  }
+]

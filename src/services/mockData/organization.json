@@ -1,0 +1,14 @@
+{
+  "Id": 1,
+  "name": "FlexCharge Demo",
+  "businessType": "saas",
+  "currency": "USD",
+  "country": "US",
+  "email": "demo@flexcharge.com",
+  "phone": "+1 (555) 123-4567",
+  "address": "123 Business St, Suite 100, City, State 12345",
+  "website": "https://flexcharge.com",
+  "timezone": "America/New_York",
+  "logo": null,
+  "createdAt": "2024-01-01T00:00:00Z"
+}

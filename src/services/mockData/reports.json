@@ -1,0 +1,111 @@
+{
+  "7d": {
+    "totalRevenue": "$2,450",
+    "totalOrders": 12,
+    "averageOrderValue": "$204.17",
+    "conversionRate": "3.2%",
+    "topProducts": [
+      {
+        "Id": 1,
+        "name": "Premium Template Pack",
+        "orders": 5,
+        "revenue": 249.95,
+        "growth": 15.2
+      },
+      {
+        "Id": 2,
+        "name": "Design Course Bundle",
+        "orders": 3,
+        "revenue": 599.97,
+        "growth": 8.7
+      }
+    ]
+  },
+  "30d": {
+    "totalRevenue": "$12,459",
+    "totalOrders": 67,
+    "averageOrderValue": "$185.96",
+    "conversionRate": "2.8%",
+    "topProducts": [
+      {
+        "Id": 1,
+        "name": "Premium Template Pack",
+        "orders": 25,
+        "revenue": 1249.75,
+        "growth": 12.5
+      },
+      {
+        "Id": 2,
+        "name": "Design Course Bundle",
+        "orders": 18,
+        "revenue": 3599.82,
+        "growth": 22.1
+      },
+      {
+        "Id": 3,
+        "name": "Logo Design Service",
+        "orders": 12,
+        "revenue": 3599.88,
+        "growth": 18.9
+      }
+    ]
+  },
+  "90d": {
+    "totalRevenue": "$34,567",
+    "totalOrders": 189,
+    "averageOrderValue": "$182.89",
+    "conversionRate": "2.6%",
+    "topProducts": [
+      {
+        "Id": 1,
+        "name": "Premium Template Pack",
+        "orders": 78,
+        "revenue": 3899.22,
+        "growth": 28.4
+      },
+      {
+        "Id": 2,
+        "name": "Design Course Bundle",
+        "orders": 52,
+        "revenue": 10399.48,
+        "growth": 35.7
+      },
+      {
+        "Id": 3,
+        "name": "Logo Design Service",
+        "orders": 34,
+        "revenue": 10199.66,
+        "growth": 42.1
+      }
+    ]
+  },
+  "1y": {
+    "totalRevenue": "$156,789",
+    "totalOrders": 834,
+    "averageOrderValue": "$188.12",
+    "conversionRate": "2.4%",
+    "topProducts": [
+      {
+        "Id": 1,
+        "name": "Premium Template Pack",
+        "orders": 312,
+        "revenue": 15599.88,
+        "growth": 67.8
+      },
+      {
+        "Id": 2,
+        "name": "Design Course Bundle",
+        "orders": 245,
+        "revenue": 48999.55,
+        "growth": 89.2
+      },
+      {
+        "Id": 3,
+        "name": "Logo Design Service",
+        "orders": 156,
+        "revenue": 46799.44,
+        "growth": 124.5
+      }
+    ]
+  }
+}

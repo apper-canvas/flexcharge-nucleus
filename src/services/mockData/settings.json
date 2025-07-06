@@ -1,0 +1,42 @@
+{
+  "organization": {
+    "name": "FlexCharge Demo",
+    "email": "demo@flexcharge.com",
+    "phone": "+1 (555) 123-4567",
+    "address": "123 Business St, Suite 100, City, State 12345",
+    "website": "https://flexcharge.com",
+    "timezone": "America/New_York"
+  },
+  "payment": {
+    "stripePublishableKey": "",
+    "stripeSecretKey": "",
+    "paypalClientId": "",
+    "currency": "USD",
+    "webhookUrl": "https://your-domain.com/webhook"
+  },
+  "tax": {
+    "taxEnabled": false,
+    "taxRate": 0,
+    "taxName": "VAT",
+    "taxNumber": ""
+  },
+  "integrations": {
+    "zapier": {
+      "connected": false,
+      "webhookUrl": ""
+    },
+    "slack": {
+      "connected": false,
+      "webhookUrl": ""
+    },
+    "analytics": {
+      "connected": false,
+      "trackingId": ""
+    },
+    "mailchimp": {
+      "connected": false,
+      "apiKey": "",
+      "listId": ""
+    }
+  }
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "Id": 1,
+    "name": "One-Time Purchase",
+    "type": "one-time",
+    "description": "Simple one-time payments for digital products",
+    "bestFor": "Digital downloads, software licenses, templates",
+    "icon": "ShoppingCart",
+    "isActive": true,
+    "isPrimary": true,
+    "configuration": {
+      "deliveryMethod": "instant",
+      "refundPolicy": "7-days",
+      "licenseType": "personal"
+    }
+  },
+  {
+    "Id": 2,
+    "name": "Credit System",
+    "type": "credit",
+    "description": "Pre-purchased credits for consumption-based services",
+    "bestFor": "AI tools, API access, image generation",
+    "icon": "Coins",
+    "isActive": false,
+    "isPrimary": false,
+    "configuration": {
+      "baseValue": 0.01,
+      "expiration": "never",
+      "autoRecharge": false
+    }
+  },
+  {
+    "Id": 3,
+    "name": "Usage-Based",
+    "type": "usage",
+    "description": "Pay-as-you-go pricing based on actual usage",
+    "bestFor": "Cloud services, APIs, data processing",
+    "icon": "Activity",
+    "isActive": false,
+    "isPrimary": false,
+    "configuration": {
+      "unit": "api-calls",
+      "pricePerUnit": 0.01,
+      "billingCycle": "monthly"
+    }
+  },
+  {
+    "Id": 4,
+    "name": "Marketplace",
+    "type": "marketplace",
+    "description": "Multi-vendor platform with commission-based pricing",
+    "bestFor": "Freelance platforms, app stores, marketplaces",
+    "icon": "Store",
+    "isActive": false,
+    "isPrimary": false,
+    "configuration": {
+      "commissionRate": 15,
+      "payoutSchedule": "weekly",
+      "minimumPayout": 50
+    }
+  },
+  {
+    "Id": 5,
+    "name": "Milestone/Project",
+    "type": "milestone",
+    "description": "Phased payments based on project milestones",
+    "bestFor": "Freelance work, consulting, custom development",
+    "icon": "Calendar",
+    "isActive": false,
+    "isPrimary": false,
+    "configuration": {
+      "defaultTemplate": "three-phase",
+      "escrowEnabled": true,
+      "approvalRequired": true
+    }
+  }
+]
