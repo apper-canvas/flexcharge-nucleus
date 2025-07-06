@@ -188,10 +188,9 @@ const MilestoneConfig = () => {
                     min="5"
                     max="100"
                     className="w-full"
-                  />
+/>
                 </div>
               )}
-)}
 
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -285,10 +284,11 @@ const MilestoneConfig = () => {
                   min="1"
                   max="20"
                   className="w-full"
-                />
+/>
               </div>
-</div>
+            </div>
 
+            <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
                   Maximum File Size (MB)
