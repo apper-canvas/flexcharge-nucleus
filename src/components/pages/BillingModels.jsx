@@ -53,6 +53,8 @@ window.location.href = '/billing-models/credit-config'
       window.location.href = '/billing-models/usage-config'
     } else if (modelId === 4) {
       window.location.href = '/billing-models/marketplace-config'
+    } else if (modelId === 5) {
+      window.location.href = '/milestone-config'
     } else {
       toast.info('Configuration panel coming soon!')
     }
@@ -87,7 +89,7 @@ window.location.href = '/billing-models/credit-config'
               bestFor={model.bestFor}
               icon={model.icon}
               isActive={model.isActive}
-              configurable={model.Id === 1 || model.Id === 2 || model.Id === 3}
+              configurable={model.Id === 1 || model.Id === 2 || model.Id === 3 || model.Id === 4 || model.Id === 5}
               onSelect={() => handleSelectModel(model.Id)}
               onConfigure={() => handleConfigureModel(model.Id)}
             />
