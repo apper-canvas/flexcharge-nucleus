@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import Layout from '@/components/organisms/Layout'
 import Dashboard from '@/components/pages/Dashboard'
@@ -10,17 +10,12 @@ import Orders from '@/components/pages/Orders'
 import Reports from '@/components/pages/Reports'
 import Settings from '@/components/pages/Settings'
 
-const isOnboardingCompleted = () => {
-  return localStorage.getItem('onboarding_completed') === 'true'
-}
 function App() {
   return (
     <>
-<Routes>
+      <Routes>
         <Route path="/onboarding" element={<Onboarding />} />
-        <Route path="/" element={
-          isOnboardingCompleted() ? <Layout /> : <Navigate to="/onboarding" replace />
-        }>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="billing-models" element={<BillingModels />} />
           <Route path="products" element={<Products />} />
