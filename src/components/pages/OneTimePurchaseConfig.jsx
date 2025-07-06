@@ -94,7 +94,7 @@ const OneTimePurchaseConfig = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">
                 Delivery Method
@@ -112,7 +112,7 @@ const OneTimePurchaseConfig = () => {
               </Select>
             </div>
 
-            {config?.delivery?.method === 'download' && (
+{(config?.delivery?.method || 'download') === 'download' && (
               <>
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -120,7 +120,7 @@ const OneTimePurchaseConfig = () => {
                   </label>
                   <Input
                     type="number"
-                    value={config.delivery.downloadLimit || 5}
+                    value={config?.delivery?.downloadLimit || 5}
                     onChange={(e) => handleConfigChange('delivery', 'downloadLimit', parseInt(e.target.value))}
                     min="1"
                     max="100"
@@ -130,7 +130,7 @@ const OneTimePurchaseConfig = () => {
                   <label className="block text-sm font-medium text-gray-300 mb-2">
                     Download Expiration
                   </label>
-                  <Select
+<Select
                     value={config?.delivery?.expiration || '24h'}
                     onChange={(e) => handleConfigChange('delivery', 'expiration', e.target.value)}
                   >
@@ -155,14 +155,14 @@ const OneTimePurchaseConfig = () => {
               </>
             )}
 
-            {config?.delivery?.method === 'email' && (
+{(config?.delivery?.method || 'download') === 'email' && (
               <>
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
                     Email Template
                   </label>
                   <textarea
-                    value={config.delivery.emailTemplate || ''}
+                    value={config?.delivery?.emailTemplate || ''}
                     onChange={(e) => handleConfigChange('delivery', 'emailTemplate', e.target.value)}
                     rows="4"
                     className="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-primary/50 focus:outline-none"
@@ -185,7 +185,7 @@ const OneTimePurchaseConfig = () => {
               </>
             )}
 
-            {config?.delivery?.method === 'account' && (
+{(config?.delivery?.method || 'download') === 'account' && (
               <>
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -206,9 +206,9 @@ const OneTimePurchaseConfig = () => {
                   <label className="block text-sm font-medium text-gray-300 mb-2">
                     Device Limit
                   </label>
-                  <Input
+<Input
                     type="number"
-                    value={config.delivery.deviceLimit || 3}
+                    value={config?.delivery?.deviceLimit || 3}
                     onChange={(e) => handleConfigChange('delivery', 'deviceLimit', parseInt(e.target.value))}
                     min="1"
                     max="10"
@@ -320,14 +320,14 @@ const OneTimePurchaseConfig = () => {
                 Allow Partial Payments
               </label>
             </div>
-            {config?.payments?.partialPayments && (
+{config?.payments?.partialPayments && (
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
                   Minimum Deposit (%)
                 </label>
                 <Input
                   type="number"
-                  value={config.payments.minimumDeposit || 25}
+                  value={config?.payments?.minimumDeposit || 25}
                   onChange={(e) => handleConfigChange('payments', 'minimumDeposit', parseInt(e.target.value))}
                   min="1"
                   max="100"
