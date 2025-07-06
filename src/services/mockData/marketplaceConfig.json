@@ -1,0 +1,26 @@
+{
+  "Id": 1,
+  "name": "Marketplace Configuration",
+  "type": "marketplace",
+  "commission": {
+    "type": "flat",
+    "baseRate": 15
+  },
+  "fees": {
+    "listingFee": 2.00,
+    "transactionFee": 2.5,
+    "paymentProcessing": "platform"
+  },
+  "payouts": {
+    "schedule": "weekly",
+    "minimumAmount": 50,
+    "holdPeriod": 7
+  },
+  "vendorRequirements": {
+    "kycRequired": true,
+    "businessVendors": true,
+    "internationalSupport": true
+  },
+  "createdAt": "2024-01-01T00:00:00Z",
+  "updatedAt": "2024-01-15T10:30:00Z"
+}

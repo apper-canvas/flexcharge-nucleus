@@ -48,9 +48,11 @@ const handleConfigureModel = (modelId) => {
     if (modelId === 1) {
       window.location.href = '/billing-models/one-time-config'
     } else if (modelId === 2) {
-      window.location.href = '/billing-models/credit-config'
+window.location.href = '/billing-models/credit-config'
     } else if (modelId === 3) {
       window.location.href = '/billing-models/usage-config'
+    } else if (modelId === 4) {
+      window.location.href = '/billing-models/marketplace-config'
     } else {
       toast.info('Configuration panel coming soon!')
     }
