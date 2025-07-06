@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { toast } from 'react-toastify'
 import Header from '@/components/organisms/Header'
@@ -11,6 +12,7 @@ import ApperIcon from '@/components/ApperIcon'
 import { getSettings, updateSettings } from '@/services/api/settingsService'
 
 const Settings = () => {
+  const navigate = useNavigate()
   const [settings, setSettings] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -58,9 +60,18 @@ const Settings = () => {
 
   return (
     <div>
-      <Header
+<Header
         title="Settings"
         subtitle="Configure your billing platform"
+        action={
+          <Button
+            variant="primary"
+            icon="Play"
+            onClick={() => navigate('/onboarding')}
+          >
+            Start Onboarding
+          </Button>
+        }
       />
 
       <div className="flex flex-col lg:flex-row gap-6">
