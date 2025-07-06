@@ -47,7 +47,7 @@ const Customers = () => {
         }}
       />
 
-      {customers.length === 0 ? (
+{customers.length === 0 ? (
         <Empty
           title="No customers yet"
           description="Your customers will appear here once they start making purchases"

@@ -82,12 +82,12 @@ const Orders = () => {
         </div>
       </div>
 
-      {filteredOrders.length === 0 ? (
+{filteredOrders.length === 0 ? (
         <Empty
-          title="No orders found"
-          description="Your orders will appear here once customers start making purchases"
-          actionText="View Products"
-          onAction={() => toast.info("Redirecting to products...")}
+          title={filter === 'all' ? "No orders yet" : `No ${filter} orders found`}
+          description={filter === 'all' ? "Your orders will appear here once customers start making purchases" : `No orders with ${filter} status found. Try changing the filter.`}
+          actionText={filter === 'all' ? "View Products" : "Clear Filter"}
+          onAction={() => filter === 'all' ? toast.info("Redirecting to products...") : setFilter('all')}
           icon="ShoppingCart"
         />
       ) : (

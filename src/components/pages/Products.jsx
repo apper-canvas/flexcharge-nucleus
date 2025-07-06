@@ -85,12 +85,12 @@ const Products = () => {
         </div>
       </div>
 
-      {filteredProducts.length === 0 ? (
+{filteredProducts.length === 0 ? (
         <Empty
-          title="No products found"
-          description="Create your first product to start selling"
-          actionText="Add Product"
-          onAction={() => toast.info("Product creation coming soon!")}
+          title={filter === 'all' ? "No products yet" : `No ${filter} products found`}
+          description={filter === 'all' ? "Create your first product to start selling" : `No products with ${filter} status found. Try changing the filter.`}
+          actionText={filter === 'all' ? "Add Product" : "Clear Filter"}
+          onAction={() => filter === 'all' ? toast.info("Product creation coming soon!") : setFilter('all')}
           icon="Package"
         />
       ) : (

@@ -6,7 +6,7 @@ export const getCustomers = async () => {
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 200))
   
-  return customers
+  return [...customers]
 }
 
 export const getCustomerById = async (id) => {

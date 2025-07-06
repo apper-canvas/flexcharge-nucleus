@@ -6,7 +6,7 @@ export const getOrders = async () => {
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 200))
   
-  return orders
+  return [...orders]
 }
 
 export const getOrderById = async (id) => {
