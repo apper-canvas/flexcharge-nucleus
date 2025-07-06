@@ -62,3 +62,28 @@
     @apply bg-surface/80 text-white font-medium px-6 py-3 rounded-lg border border-white/20 hover:border-primary/50 transition-all duration-200;
   }
 }
+
+/* Header and Button Visibility Enhancements */
+.header-action {
+  @apply relative z-20;
+}
+
+.header-action button {
+  @apply relative z-20 !important;
+}
+
+/* Ensure buttons are always visible above content */
+.btn-primary {
+  @apply bg-gradient-to-r from-primary to-secondary text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] relative z-10;
+}
+
+/* Mobile button adjustments */
+@media (max-width: 768px) {
+  .header-action {
+    @apply w-full flex justify-center mt-4;
+  }
+  
+  .header-action button {
+    @apply w-full max-w-xs;
+  }
+}
