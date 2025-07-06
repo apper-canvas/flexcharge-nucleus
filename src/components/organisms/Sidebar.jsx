@@ -9,7 +9,6 @@ const Sidebar = () => {
 const navItems = [
     { to: '/', icon: 'LayoutDashboard', label: 'Dashboard' },
     { to: '/billing-models', icon: 'Settings', label: 'Billing Models' },
-    { to: '/billing-models/usage-config', icon: 'Gauge', label: 'Usage-Based' },
     { to: '/products', icon: 'Package', label: 'Products' },
     { to: '/customers', icon: 'Users', label: 'Customers' },
     { to: '/orders', icon: 'ShoppingCart', label: 'Orders' },

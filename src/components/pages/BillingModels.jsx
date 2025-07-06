@@ -49,6 +49,8 @@ const handleConfigureModel = (modelId) => {
       window.location.href = '/billing-models/one-time-config'
     } else if (modelId === 2) {
       window.location.href = '/billing-models/credit-config'
+    } else if (modelId === 3) {
+      window.location.href = '/billing-models/usage-config'
     } else {
       toast.info('Configuration panel coming soon!')
     }
@@ -83,7 +85,7 @@ const handleConfigureModel = (modelId) => {
               bestFor={model.bestFor}
               icon={model.icon}
               isActive={model.isActive}
-              configurable={model.Id === 1}
+              configurable={model.Id === 1 || model.Id === 2 || model.Id === 3}
               onSelect={() => handleSelectModel(model.Id)}
               onConfigure={() => handleConfigureModel(model.Id)}
             />
