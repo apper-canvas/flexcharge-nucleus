@@ -64,7 +64,8 @@ const Onboarding = () => {
     }
   }
 
-  const handleSkip = () => {
+const handleSkip = () => {
+    localStorage.setItem('onboarding_completed', 'true')
     navigate('/')
   }
 

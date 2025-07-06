@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 import Header from '@/components/organisms/Header'
 import Button from '@/components/atoms/Button'
 import Input from '@/components/atoms/Input'
@@ -9,14 +10,13 @@ import Loading from '@/components/ui/Loading'
 import Error from '@/components/ui/Error'
 import ApperIcon from '@/components/ApperIcon'
 import { getSettings, updateSettings } from '@/services/api/settingsService'
-
 const Settings = () => {
+  const navigate = useNavigate()
   const [settings, setSettings] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [activeTab, setActiveTab] = useState('organization')
   const [saving, setSaving] = useState(false)
-
   const loadSettings = async () => {
     try {
       setLoading(true)
@@ -90,11 +90,12 @@ const Settings = () => {
             animate={{ opacity: 1, x: 0 }}
             className="bg-surface/60 backdrop-blur-sm rounded-xl p-6 border border-white/10"
           >
-            {activeTab === 'organization' && (
+{activeTab === 'organization' && (
               <OrganizationSettings 
                 settings={settings?.organization} 
                 onSave={(data) => handleSave('organization', data)}
                 saving={saving}
+                navigate={navigate}
               />
             )}
             
@@ -128,7 +129,7 @@ const Settings = () => {
   )
 }
 
-const OrganizationSettings = ({ settings, onSave, saving }) => {
+const OrganizationSettings = ({ settings, onSave, saving, navigate }) => {
   const [formData, setFormData] = useState({
     name: settings?.name || '',
     email: settings?.email || '',
@@ -146,14 +147,27 @@ const OrganizationSettings = ({ settings, onSave, saving }) => {
     { value: 'America/Los_Angeles', label: 'Pacific Time' }
   ]
 
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
     e.preventDefault()
     onSave(formData)
   }
 
-  return (
+  const handleSetupWizard = () => {
+    localStorage.removeItem('onboarding_completed')
+    navigate('/onboarding')
+  }
+return (
     <div>
-      <h3 className="text-xl font-semibold text-white mb-6">Organization Settings</h3>
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-xl font-semibold text-white">Organization Settings</h3>
+        <Button
+          variant="secondary"
+          icon="Settings"
+          onClick={handleSetupWizard}
+        >
+          Setup Wizard
+        </Button>
+      </div>
       
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
