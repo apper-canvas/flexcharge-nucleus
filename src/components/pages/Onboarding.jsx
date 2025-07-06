@@ -43,8 +43,55 @@ const Onboarding = () => {
     { value: 'FR', label: 'France' }
   ]
 
-  const handleInputChange = (field, value) => {
+const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }))
+  }
+
+  const handleLogoUpload = (file) => {
+    if (!file) return
+
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      toast.error('Please select a valid image file')
+      return
+    }
+
+    // Validate file size (5MB max)
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error('Image file must be less than 5MB')
+      return
+    }
+
+    // Convert to base64 for storage
+    const reader = new FileReader()
+    reader.onload = (e) => {
+      setFormData(prev => ({ ...prev, logo: e.target.result }))
+      toast.success('Logo uploaded successfully')
+    }
+    reader.onerror = () => {
+      toast.error('Failed to upload logo')
+    }
+    reader.readAsDataURL(file)
+  }
+
+  const handleDragOver = (e) => {
+    e.preventDefault()
+  }
+
+  const handleDrop = (e) => {
+    e.preventDefault()
+    const file = e.dataTransfer.files[0]
+    handleLogoUpload(file)
+  }
+
+  const handleFileInput = (e) => {
+    const file = e.target.files[0]
+    handleLogoUpload(file)
+  }
+
+  const removeLogo = () => {
+    setFormData(prev => ({ ...prev, logo: null }))
+    toast.info('Logo removed')
   }
 
   const handleSubmit = async (e) => {
@@ -115,6 +162,48 @@ const Onboarding = () => {
               onChange={(e) => handleInputChange('country', e.target.value)}
               placeholder="Select country"
             />
+<div className="space-y-4">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
+                Logo Upload (Optional)
+              </label>
+              
+              {formData.logo ? (
+                <div className="relative">
+                  <div className="bg-surface/40 border border-white/10 rounded-lg p-4 flex items-center justify-center">
+                    <img 
+                      src={formData.logo} 
+                      alt="Organization logo" 
+                      className="max-h-24 max-w-full object-contain rounded"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    onClick={removeLogo}
+                    className="absolute -top-2 -right-2 bg-error text-white rounded-full p-1 hover:bg-error/80 transition-colors"
+                  >
+                    <ApperIcon name="X" size={16} />
+                  </button>
+                </div>
+              ) : (
+                <div
+                  className="bg-surface/40 border-2 border-dashed border-white/20 rounded-lg p-8 text-center hover:border-primary/50 transition-colors cursor-pointer"
+                  onDragOver={handleDragOver}
+                  onDrop={handleDrop}
+                  onClick={() => document.getElementById('logo-upload').click()}
+                >
+                  <ApperIcon name="Upload" size={32} className="mx-auto mb-2 text-gray-400" />
+                  <p className="text-gray-400 mb-1">Drop your logo here or click to browse</p>
+                  <p className="text-xs text-gray-500">PNG, JPG, GIF up to 5MB</p>
+                  <input
+                    id="logo-upload"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFileInput}
+                    className="hidden"
+                  />
+                </div>
+              )}
+            </div>
 
             <div className="flex gap-4">
               <Button
