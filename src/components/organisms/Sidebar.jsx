@@ -12,6 +12,7 @@ const navItems = [
     { to: '/products', icon: 'Package', label: 'Products' },
     { to: '/customers', icon: 'Users', label: 'Customers' },
     { to: '/orders', icon: 'ShoppingCart', label: 'Orders' },
+    { to: '/milestone-config', icon: 'Target', label: 'Milestone Config' },
     { to: '/reports', icon: 'BarChart3', label: 'Reports' },
     { to: '/settings', icon: 'Settings', label: 'Settings' }
   ]

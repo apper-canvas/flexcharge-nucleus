@@ -8,6 +8,7 @@ import OneTimePurchaseConfig from '@/components/pages/OneTimePurchaseConfig'
 import CreditSystemConfig from '@/components/pages/CreditSystemConfig'
 import UsageBasedConfig from '@/components/pages/UsageBasedConfig'
 import MarketplaceConfig from '@/components/pages/MarketplaceConfig'
+import MilestoneConfig from '@/components/pages/MilestoneConfig'
 import Products from '@/components/pages/Products'
 import Customers from '@/components/pages/Customers'
 import Orders from '@/components/pages/Orders'
@@ -17,7 +18,7 @@ import Settings from '@/components/pages/Settings'
 function App() {
   return (
     <>
-      <Routes>
+<Routes>
         <Route path="/onboarding" element={<Onboarding />} />
 <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
@@ -26,6 +27,7 @@ function App() {
           <Route path="billing-models/credit-config" element={<CreditSystemConfig />} />
           <Route path="billing-models/usage-config" element={<UsageBasedConfig />} />
           <Route path="billing-models/marketplace-config" element={<MarketplaceConfig />} />
+          <Route path="milestone-config" element={<MilestoneConfig />} />
           <Route path="products" element={<Products />} />
           <Route path="customers" element={<Customers />} />
           <Route path="orders" element={<Orders />} />
