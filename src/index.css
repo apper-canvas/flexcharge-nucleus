@@ -63,6 +63,38 @@
   }
 }
 
+/* Z-Index Stacking System */
+@layer utilities {
+  .z-header {
+    @apply z-40;
+  }
+  
+  .z-header-dropdown {
+    @apply z-50;
+  }
+  
+  .z-sidebar {
+    @apply z-30;
+  }
+  
+  .z-main-content {
+    @apply z-0;
+  }
+  
+  .z-overlay {
+    @apply z-60;
+  }
+}
+
+/* Header Component Stacking */
+.header-container {
+  @apply relative z-40;
+}
+
+.header-notification-dropdown {
+  @apply relative z-50;
+}
+
 /* Header and Button Visibility Enhancements */
 .header-action {
   @apply relative z-20;
