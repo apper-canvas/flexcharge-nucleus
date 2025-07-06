@@ -571,7 +571,7 @@ const SystemRulesForm = ({ rules, onSave }) => {
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
+<label className="block text-sm font-medium text-gray-300 mb-2">
             Credit Expiration
           </label>
           <Select
@@ -584,7 +584,6 @@ const SystemRulesForm = ({ rules, onSave }) => {
               { value: 'custom', label: 'Custom' }
             ]}
           />
-          
           {formData.expiration === 'custom' && (
             <div className="mt-3">
               <label className="block text-sm font-medium text-gray-300 mb-2">

@@ -198,14 +198,14 @@ const OrganizationSettings = ({ settings, onSave, saving }) => {
           value={formData.address}
           onChange={(e) => setFormData({...formData, address: e.target.value})}
         />
-        
-        <Select
-          label="Timezone"
-          options={timezones}
-          value={formData.timezone}
-          onChange={(e) => setFormData({...formData, timezone: e.target.value})}
-        />
-        
+<div>
+          <label className="block text-sm font-medium text-gray-300 mb-2">Timezone</label>
+          <Select
+            value={formData.timezone}
+            onChange={(e) => setFormData({...formData, timezone: e.target.value})}
+            options={timezones}
+          />
+        </div>
         <Button
           type="submit"
           variant="primary"
@@ -280,14 +280,14 @@ const PaymentSettings = ({ settings, onSave, saving }) => {
             placeholder="Your PayPal Client ID"
           />
         </div>
-        
-        <Select
-          label="Default Currency"
-          options={currencies}
-          value={formData.currency}
-          onChange={(e) => setFormData({...formData, currency: e.target.value})}
-        />
-        
+<div>
+          <label className="block text-sm font-medium text-gray-300 mb-2">Default Currency</label>
+          <Select
+            value={formData.currency}
+            onChange={(e) => setFormData({...formData, currency: e.target.value})}
+            options={currencies}
+          />
+        </div>
         <Input
           label="Webhook URL"
           value={formData.webhookUrl}

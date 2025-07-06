@@ -127,18 +127,19 @@ const OneTimePurchaseConfig = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+<label className="block text-sm font-medium text-gray-300 mb-2">
                     Download Expiration
                   </label>
-<Select
+                  <Select
                     value={config?.delivery?.expiration || '24h'}
                     onChange={(e) => handleConfigChange('delivery', 'expiration', e.target.value)}
-                  >
-                    <option value="24h">24 Hours</option>
-                    <option value="7d">7 Days</option>
-                    <option value="30d">30 Days</option>
-                    <option value="never">Never</option>
-                  </Select>
+                    options={[
+                      { value: '24h', label: '24 Hours' },
+                      { value: '7d', label: '7 Days' },
+                      { value: '30d', label: '30 Days' },
+                      { value: 'never', label: 'Never' }
+                    ]}
+                  />
                 </div>
                 <div className="flex items-center gap-2">
                   <input
@@ -170,17 +171,18 @@ const OneTimePurchaseConfig = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+<label className="block text-sm font-medium text-gray-300 mb-2">
                     Size Limit (MB)
                   </label>
                   <Select
                     value={config?.delivery?.sizeLimit || '10'}
                     onChange={(e) => handleConfigChange('delivery', 'sizeLimit', e.target.value)}
-                  >
-                    <option value="10">10 MB</option>
-                    <option value="25">25 MB</option>
-                    <option value="50">50 MB</option>
-                  </Select>
+                    options={[
+                      { value: '10', label: '10 MB' },
+                      { value: '25', label: '25 MB' },
+                      { value: '50', label: '50 MB' }
+                    ]}
+                  />
                 </div>
               </>
             )}
@@ -188,19 +190,20 @@ const OneTimePurchaseConfig = () => {
 {(config?.delivery?.method || 'download') === 'account' && (
               <>
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+<label className="block text-sm font-medium text-gray-300 mb-2">
                     Access Duration
                   </label>
                   <Select
                     value={config?.delivery?.duration || 'lifetime'}
                     onChange={(e) => handleConfigChange('delivery', 'duration', e.target.value)}
-                  >
-                    <option value="lifetime">Lifetime</option>
-                    <option value="1y">1 Year</option>
-                    <option value="6m">6 Months</option>
-                    <option value="3m">3 Months</option>
-                    <option value="custom">Custom</option>
-                  </Select>
+                    options={[
+                      { value: 'lifetime', label: 'Lifetime' },
+                      { value: '1y', label: '1 Year' },
+                      { value: '6m', label: '6 Months' },
+                      { value: '3m', label: '3 Months' },
+                      { value: 'custom', label: 'Custom' }
+                    ]}
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -238,18 +241,19 @@ const OneTimePurchaseConfig = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+<label className="block text-sm font-medium text-gray-300 mb-2">
                 License Type
               </label>
               <Select
                 value={config?.licensing?.type || 'personal'}
                 onChange={(e) => handleConfigChange('licensing', 'type', e.target.value)}
-              >
-                <option value="personal">Personal</option>
-                <option value="commercial">Commercial</option>
-                <option value="extended">Extended</option>
-                <option value="custom">Custom</option>
-              </Select>
+                options={[
+                  { value: 'personal', label: 'Personal' },
+                  { value: 'commercial', label: 'Commercial' },
+                  { value: 'extended', label: 'Extended' },
+                  { value: 'custom', label: 'Custom' }
+                ]}
+              />
             </div>
             <div className="flex items-center gap-2">
               <input
@@ -356,19 +360,20 @@ const OneTimePurchaseConfig = () => {
 
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+<label className="block text-sm font-medium text-gray-300 mb-2">
                 Refund Policy
               </label>
               <Select
                 value={config?.refunds?.policy || 'none'}
                 onChange={(e) => handleConfigChange('refunds', 'policy', e.target.value)}
-              >
-                <option value="none">No Refunds</option>
-                <option value="7d">7 Days</option>
-                <option value="14d">14 Days</option>
-                <option value="30d">30 Days</option>
-                <option value="custom">Custom</option>
-              </Select>
+                options={[
+                  { value: 'none', label: 'No Refunds' },
+                  { value: '7d', label: '7 Days' },
+                  { value: '14d', label: '14 Days' },
+                  { value: '30d', label: '30 Days' },
+                  { value: 'custom', label: 'Custom' }
+                ]}
+              />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">

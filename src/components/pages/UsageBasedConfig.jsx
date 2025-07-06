@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { toast } from 'react-toastify'
-import Header from '@/components/organisms/Header'
-import Button from '@/components/atoms/Button'
-import Input from '@/components/atoms/Input'
-import Select from '@/components/atoms/Select'
-import Badge from '@/components/atoms/Badge'
-import Loading from '@/components/ui/Loading'
-import Error from '@/components/ui/Error'
-import ApperIcon from '@/components/ApperIcon'
-import {
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import ApperIcon from "@/components/ApperIcon";
+import Header from "@/components/organisms/Header";
+import Badge from "@/components/atoms/Badge";
+import Select from "@/components/atoms/Select";
+import Button from "@/components/atoms/Button";
+import Input from "@/components/atoms/Input";
+import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import { 
   getMeters,
   createMeter,
   updateMeter,
@@ -358,7 +358,7 @@ const MeterSetupManager = ({ meters, onEdit, onDelete, onAdd, showForm, editingM
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+<label className="block text-sm font-medium text-gray-300 mb-2">
                   Unit
                 </label>
                 <Select
@@ -375,7 +375,7 @@ const MeterSetupManager = ({ meters, onEdit, onDelete, onAdd, showForm, editingM
                 />
               </div>
 
-              <div>
+<div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
                   Aggregation
                 </label>
@@ -390,8 +390,7 @@ const MeterSetupManager = ({ meters, onEdit, onDelete, onAdd, showForm, editingM
                   ]}
                 />
               </div>
-
-              <div>
+<div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
                   Reset Period
                 </label>
@@ -573,7 +572,7 @@ const PricingModelsManager = ({ models, onEdit, onDelete, onAdd, showForm, editi
                 />
               </div>
 
-              <div>
+<div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
                   Pricing Type
                 </label>
@@ -771,7 +770,7 @@ const UsageControlsForm = ({ controls, onSave }) => {
               onChange={(e) => setFormData(prev => ({ ...prev, hardLimits: e.target.checked }))}
               className="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2"
             />
-            <label htmlFor="hardLimits" className="text-sm text-gray-300">
+<label htmlFor="hardLimits" className="text-sm text-gray-300">
               Enable Hard Limits
             </label>
           </div>

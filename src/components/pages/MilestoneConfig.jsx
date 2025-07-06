@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
-import Header from '@/components/organisms/Header'
-import Button from '@/components/atoms/Button'
-import Input from '@/components/atoms/Input'
-import Select from '@/components/atoms/Select'
-import Badge from '@/components/atoms/Badge'
-import Loading from '@/components/ui/Loading'
-import Error from '@/components/ui/Error'
-import ApperIcon from '@/components/ApperIcon'
-import { getMilestoneConfig, updateMilestoneConfig } from '@/services/api/milestoneService'
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import ApperIcon from "@/components/ApperIcon";
+import Header from "@/components/organisms/Header";
+import Badge from "@/components/atoms/Badge";
+import Select from "@/components/atoms/Select";
+import Button from "@/components/atoms/Button";
+import Input from "@/components/atoms/Input";
+import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import { getMilestoneConfig, updateMilestoneConfig } from "@/services/api/milestoneService";
 
 const MilestoneConfig = () => {
   const navigate = useNavigate()
@@ -191,6 +191,7 @@ const MilestoneConfig = () => {
                   />
                 </div>
               )}
+)}
 
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -200,12 +201,13 @@ const MilestoneConfig = () => {
                   value={config?.paymentTerms?.paymentTimeout || 7}
                   onChange={(e) => handleConfigChange('paymentTerms', 'paymentTimeout', parseInt(e.target.value))}
                   className="w-full"
-                >
-                  <option value={3}>3 Days</option>
-                  <option value={7}>7 Days</option>
-                  <option value={14}>14 Days</option>
-                  <option value={30}>30 Days</option>
-                </Select>
+                  options={[
+                    { value: 3, label: '3 Days' },
+                    { value: 7, label: '7 Days' },
+                    { value: 14, label: '14 Days' },
+                    { value: 30, label: '30 Days' }
+                  ]}
+/>
               </div>
             </div>
 
@@ -285,6 +287,7 @@ const MilestoneConfig = () => {
                   className="w-full"
                 />
               </div>
+</div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -294,12 +297,13 @@ const MilestoneConfig = () => {
                   value={config?.evidence?.maxFileSize || 10}
                   onChange={(e) => handleConfigChange('evidence', 'maxFileSize', parseInt(e.target.value))}
                   className="w-full"
-                >
-                  <option value={5}>5 MB</option>
-                  <option value={10}>10 MB</option>
-                  <option value={25}>25 MB</option>
-                  <option value={50}>50 MB</option>
-                </Select>
+                  options={[
+                    { value: 5, label: '5 MB' },
+                    { value: 10, label: '10 MB' },
+                    { value: 25, label: '25 MB' },
+                    { value: 50, label: '50 MB' }
+                  ]}
+/>
               </div>
             </div>
 
@@ -376,6 +380,7 @@ const MilestoneConfig = () => {
                   Enable Dispute System
                 </label>
               </div>
+</div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -385,14 +390,15 @@ const MilestoneConfig = () => {
                   value={config?.disputes?.disputeWindow || 7}
                   onChange={(e) => handleConfigChange('disputes', 'disputeWindow', parseInt(e.target.value))}
                   className="w-full"
-                >
-                  <option value={3}>3 Days</option>
-                  <option value={7}>7 Days</option>
-                  <option value={14}>14 Days</option>
-                  <option value={30}>30 Days</option>
-                </Select>
+                  options={[
+                    { value: 3, label: '3 Days' },
+                    { value: 7, label: '7 Days' },
+                    { value: 14, label: '14 Days' },
+                    { value: 30, label: '30 Days' }
+                  ]}
+/>
               </div>
-
+              
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
                   Mediation Type
@@ -401,11 +407,12 @@ const MilestoneConfig = () => {
                   value={config?.disputes?.mediationType || 'platform'}
                   onChange={(e) => handleConfigChange('disputes', 'mediationType', e.target.value)}
                   className="w-full"
-                >
-                  <option value="platform">Platform Mediation</option>
-                  <option value="thirdparty">Third-Party Mediation</option>
-                  <option value="automated">Automated Resolution</option>
-                </Select>
+                  options={[
+                    { value: 'platform', label: 'Platform Mediation' },
+                    { value: 'thirdparty', label: 'Third-Party Mediation' },
+                    { value: 'automated', label: 'Automated Resolution' }
+                  ]}
+/>
               </div>
             </div>
 

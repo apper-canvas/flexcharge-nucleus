@@ -89,21 +89,21 @@ const MarketplaceConfig = () => {
             </div>
           </div>
 
-          <div className="space-y-4">
+<div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-white mb-2">Commission Type</label>
               <Select
                 value={config.commission.type}
                 onChange={(e) => updateConfig('commission', 'type', e.target.value)}
                 className="w-full"
-              >
-                <option value="flat">Flat Rate</option>
-                <option value="category">Category-based</option>
-                <option value="tier">Tier-based</option>
-                <option value="volume">Volume-based</option>
-              </Select>
+                options={[
+                  { value: 'flat', label: 'Flat Rate' },
+                  { value: 'category', label: 'Category-based' },
+                  { value: 'tier', label: 'Tier-based' },
+                  { value: 'volume', label: 'Volume-based' }
+                ]}
+              />
             </div>
-
             <div>
               <label className="block text-sm font-medium text-white mb-2">Base Rate (%)</label>
               <Input
@@ -161,18 +161,18 @@ const MarketplaceConfig = () => {
                 step="0.1"
               />
             </div>
-
-            <div>
+<div>
               <label className="block text-sm font-medium text-white mb-2">Payment Processing</label>
               <Select
                 value={config.fees.paymentProcessing}
                 onChange={(e) => updateConfig('fees', 'paymentProcessing', e.target.value)}
                 className="w-full"
-              >
-                <option value="platform">Platform Pays</option>
-                <option value="vendor">Vendor Pays</option>
-                <option value="split">Split Cost</option>
-              </Select>
+                options={[
+                  { value: 'platform', label: 'Platform Pays' },
+                  { value: 'vendor', label: 'Vendor Pays' },
+                  { value: 'split', label: 'Split Cost' }
+                ]}
+              />
             </div>
           </div>
         </motion.div>
@@ -194,21 +194,22 @@ const MarketplaceConfig = () => {
             </div>
           </div>
 
-          <div className="space-y-4">
+<div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-white mb-2">Payout Schedule</label>
               <Select
                 value={config.payouts.schedule}
                 onChange={(e) => updateConfig('payouts', 'schedule', e.target.value)}
                 className="w-full"
-              >
-                <option value="immediate">Immediate</option>
-                <option value="daily">Daily</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-                <option value="net15">Net 15</option>
-                <option value="net30">Net 30</option>
-              </Select>
+                options={[
+                  { value: 'immediate', label: 'Immediate' },
+                  { value: 'daily', label: 'Daily' },
+                  { value: 'weekly', label: 'Weekly' },
+                  { value: 'monthly', label: 'Monthly' },
+                  { value: 'net15', label: 'Net 15' },
+                  { value: 'net30', label: 'Net 30' }
+                ]}
+              />
             </div>
 
             <div>
