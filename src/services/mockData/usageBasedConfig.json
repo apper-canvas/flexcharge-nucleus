@@ -1,0 +1,158 @@
+{
+  "meters": [
+    {
+      "Id": 1,
+      "name": "API Usage",
+      "code": "api_usage",
+      "unit": "api_calls",
+      "aggregation": "sum",
+      "resetPeriod": "monthly",
+      "description": "Tracks API endpoint usage",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 2,
+      "name": "Storage Usage",
+      "code": "storage_usage",
+      "unit": "gb_storage",
+      "aggregation": "max",
+      "resetPeriod": "never",
+      "description": "Tracks storage consumption",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 3,
+      "name": "Compute Hours",
+      "code": "compute_hours",
+      "unit": "compute_hours",
+      "aggregation": "sum",
+      "resetPeriod": "monthly",
+      "description": "Tracks compute resource usage",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 4,
+      "name": "Bandwidth Usage",
+      "code": "bandwidth_usage",
+      "unit": "bandwidth",
+      "aggregation": "sum",
+      "resetPeriod": "monthly",
+      "description": "Tracks data transfer usage",
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "pricingModels": [
+    {
+      "Id": 1,
+      "name": "Standard API Pricing",
+      "type": "simple",
+      "pricePerUnit": 0.01,
+      "description": "Simple per-call pricing for API usage",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 2,
+      "name": "Storage Tiered Pricing",
+      "type": "tiered",
+      "tiers": [
+        {
+          "upTo": 100,
+          "pricePerUnit": 0.10
+        },
+        {
+          "upTo": 1000,
+          "pricePerUnit": 0.08
+        },
+        {
+          "upTo": null,
+          "pricePerUnit": 0.05
+        }
+      ],
+      "description": "Tiered pricing for storage usage",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 3,
+      "name": "Compute Volume Pricing",
+      "type": "volume",
+      "volumeRates": [
+        {
+          "minVolume": 0,
+          "maxVolume": 100,
+          "pricePerUnit": 0.50
+        },
+        {
+          "minVolume": 101,
+          "maxVolume": 500,
+          "pricePerUnit": 0.40
+        },
+        {
+          "minVolume": 501,
+          "maxVolume": null,
+          "pricePerUnit": 0.30
+        }
+      ],
+      "description": "Volume-based pricing for compute hours",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 4,
+      "name": "Bandwidth Package",
+      "type": "package",
+      "packagePrice": 10.00,
+      "packageUnits": 1000,
+      "overageRate": 0.02,
+      "description": "Fixed package with overage for bandwidth",
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "usageControls": {
+    "hardLimits": true,
+    "maxUsage": 5000,
+    "softAlerts": {
+      "enabled": true,
+      "thresholds": [50, 75, 90, 100]
+    },
+    "budgetCaps": true,
+    "maxBudget": 500.00,
+    "notificationEmails": ["admin@example.com", "billing@example.com"]
+  },
+  "rateConfigurations": [
+    {
+      "Id": 1,
+      "name": "API Standard Rate",
+      "meterId": 1,
+      "pricingModelId": 1,
+      "isActive": true,
+      "description": "Standard rate configuration for API usage",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 2,
+      "name": "Storage Tiered Rate",
+      "meterId": 2,
+      "pricingModelId": 2,
+      "isActive": true,
+      "description": "Tiered rate configuration for storage usage",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 3,
+      "name": "Compute Volume Rate",
+      "meterId": 3,
+      "pricingModelId": 3,
+      "isActive": true,
+      "description": "Volume-based rate configuration for compute hours",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 4,
+      "name": "Bandwidth Package Rate",
+      "meterId": 4,
+      "pricingModelId": 4,
+      "isActive": false,
+      "description": "Package-based rate configuration for bandwidth",
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  ]
+}
