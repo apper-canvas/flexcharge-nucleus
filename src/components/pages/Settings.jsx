@@ -58,24 +58,22 @@ const Settings = () => {
   if (loading) return <Loading />
   if (error) return <Error message={error} onRetry={loadSettings} />
 
-return (
-    <div className="relative">
-      <Header
+  return (
+    <div>
+<Header
         title="Settings"
         subtitle="Configure your billing platform"
         action={
-          <div className="relative z-10">
-            <Button
-              variant="primary"
-              icon="Play"
-              onClick={() => navigate('/onboarding')}
-              className="shadow-lg hover:shadow-xl"
-            >
-              Get Started with Setup
-            </Button>
-          </div>
+<Button
+            variant="primary"
+            icon="Play"
+            onClick={() => navigate('/onboarding')}
+          >
+            Get Started with Setup
+          </Button>
         }
       />
+
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Sidebar Tabs */}
         <div className="lg:w-64 space-y-2">
