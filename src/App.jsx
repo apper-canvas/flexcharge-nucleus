@@ -4,6 +4,7 @@ import Layout from '@/components/organisms/Layout'
 import Dashboard from '@/components/pages/Dashboard'
 import Onboarding from '@/components/pages/Onboarding'
 import BillingModels from '@/components/pages/BillingModels'
+import OneTimePurchaseConfig from '@/components/pages/OneTimePurchaseConfig'
 import Products from '@/components/pages/Products'
 import Customers from '@/components/pages/Customers'
 import Orders from '@/components/pages/Orders'
@@ -15,9 +16,10 @@ function App() {
     <>
       <Routes>
         <Route path="/onboarding" element={<Onboarding />} />
-        <Route path="/" element={<Layout />}>
+<Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="billing-models" element={<BillingModels />} />
+          <Route path="billing-models/one-time-config" element={<OneTimePurchaseConfig />} />
           <Route path="products" element={<Products />} />
           <Route path="customers" element={<Customers />} />
           <Route path="orders" element={<Orders />} />

@@ -43,8 +43,13 @@ const BillingModels = () => {
     }
   }
 
-  const handleConfigureModel = (modelId) => {
-    toast.info('Configuration panel coming soon!')
+const handleConfigureModel = (modelId) => {
+    // Navigate to one-time purchase configuration
+    if (modelId === 1) {
+      window.location.href = '/billing-models/one-time-config'
+    } else {
+      toast.info('Configuration panel coming soon!')
+    }
   }
 
   if (loading) return <Loading type="dashboard" />
@@ -70,12 +75,13 @@ const BillingModels = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
           >
-            <ModelCard
+<ModelCard
               title={model.name}
               description={model.description}
               bestFor={model.bestFor}
               icon={model.icon}
               isActive={model.isActive}
+              configurable={model.Id === 1}
               onSelect={() => handleSelectModel(model.Id)}
               onConfigure={() => handleConfigureModel(model.Id)}
             />

@@ -8,6 +8,7 @@ const ModelCard = ({
   bestFor, 
   icon, 
   isActive = false,
+  configurable = false,
   onSelect,
   onConfigure,
   className = ''
@@ -65,7 +66,7 @@ const ModelCard = ({
           {isActive ? "Active" : "Select"}
         </Button>
         
-        {isActive && (
+{isActive && configurable && (
           <Button
             variant="outline"
             size="sm"
