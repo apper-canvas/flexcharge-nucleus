@@ -1,0 +1,88 @@
+{
+  "definition": {
+    "name": "FlexCredits",
+    "symbol": "FC",
+    "baseValue": 0.01
+  },
+  "packages": [
+    {
+      "Id": 1,
+      "name": "Starter",
+      "amount": 100,
+      "price": 10.00,
+      "bonusCredits": 0,
+      "badge": "",
+      "order": 1,
+      "isPopular": false,
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 2,
+      "name": "Popular",
+      "amount": 500,
+      "price": 45.00,
+      "bonusCredits": 50,
+      "badge": "10% Bonus",
+      "order": 2,
+      "isPopular": true,
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 3,
+      "name": "Pro",
+      "amount": 2000,
+      "price": 150.00,
+      "bonusCredits": 500,
+      "badge": "25% Bonus",
+      "order": 3,
+      "isPopular": false,
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "rules": {
+    "expiration": "never",
+    "customExpirationDays": 365,
+    "allowNegativeBalance": false,
+    "autoRecharge": false,
+    "autoRechargeThreshold": 10,
+    "autoRechargeAmount": 100
+  },
+  "consumptionRates": [
+    {
+      "Id": 1,
+      "operation": "API Call",
+      "description": "Standard API endpoint call",
+      "creditsRequired": 1,
+      "unit": "per_call",
+      "isActive": true,
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 2,
+      "operation": "Image Gen SD",
+      "description": "Standard definition image generation",
+      "creditsRequired": 5,
+      "unit": "per_call",
+      "isActive": true,
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 3,
+      "operation": "Image Gen HD",
+      "description": "High definition image generation",
+      "creditsRequired": 10,
+      "unit": "per_call",
+      "isActive": true,
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "Id": 4,
+      "operation": "Doc Processing",
+      "description": "Document processing and analysis",
+      "creditsRequired": 0.1,
+      "unit": "per_page",
+      "isActive": true,
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  ]
+}

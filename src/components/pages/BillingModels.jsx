@@ -44,9 +44,11 @@ const BillingModels = () => {
   }
 
 const handleConfigureModel = (modelId) => {
-    // Navigate to one-time purchase configuration
+    // Navigate to model-specific configuration
     if (modelId === 1) {
       window.location.href = '/billing-models/one-time-config'
+    } else if (modelId === 2) {
+      window.location.href = '/billing-models/credit-config'
     } else {
       toast.info('Configuration panel coming soon!')
     }
